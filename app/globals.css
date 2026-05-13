@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+/* Font references from next/font (injected on <html>) */
+@theme inline {
+  --font-display: var(--font-bricolage);
+  --font-body: var(--font-onest);
+  --font-mono: var(--font-jetbrains);
+}
+
+/* Tailwind color tokens */
+@theme {
+  --color-ink: #080808;
+  --color-ink-2: #0e0e0e;
+  --color-ink-3: #161616;
+  --color-ink-4: #1e1e1e;
+  --color-wire: #2a2a2a;
+  --color-wire-2: #333333;
+  --color-dust: #555555;
+  --color-fog: #888888;
+  --color-mist: #aaaaaa;
+  --color-paper: #e8e4dc;
+  --color-paper-dim: #c4c0b8;
+  --color-rental: #d4a853;
+  --color-table: #c44b2a;
+}
+
+/* Raw CSS vars for arbitrary-value usage and rgba helpers */
+:root {
+  --ink: #080808;
+  --ink-2: #0e0e0e;
+  --ink-3: #161616;
+  --ink-4: #1e1e1e;
+  --wire: #2a2a2a;
+  --wire-2: #333333;
+  --dust: #555555;
+  --fog: #888888;
+  --mist: #aaaaaa;
+  --paper: #e8e4dc;
+  --paper-dim: #c4c0b8;
+  --rental: #d4a853;
+  --rental-dim: rgba(212, 168, 83, 0.08);
+  --table: #c44b2a;
+  --table-dim: rgba(196, 75, 42, 0.08);
+  --studio: #7c3aed;
+  --garage: #059669;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--ink);
+  color: var(--paper);
+  overflow-x: hidden;
+}
+
+/* ─── Hero grain overlay ─────────────────────────────── */
+.hero-grain {
+  position: relative;
+}
+.hero-grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Ticker infinite scroll ─────────────────────────── */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 28s linear infinite;
+}
+.ticker-wrap:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+/* ─── Module link arrow ──────────────────────────────── */
+.module-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: gap 0.2s ease;
+}
+.module-link:hover {
+  gap: 16px;
+}
+
+/* ─── Scroll reveal ──────────────────────────────────── */
+.sr-hidden {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.sr-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sr-hidden {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ─── Hero entrance animations ───────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .anim-rise-1 {
+    opacity: 0;
+    animation: rise 0.8s 0.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .anim-rise-2 {
+    opacity: 0;
+    animation: rise 0.8s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .anim-rise-3 {
+    opacity: 0;
+    animation: rise 0.8s 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .anim-fadein {
+    opacity: 0;
+    animation: fadein 1s 0.8s ease forwards;
+  }
+}
+
+/* ─── Button helpers ─────────────────────────────────── */
+.btn-primary {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: var(--paper-dim);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  border: 1px solid var(--wire-2);
+  color: var(--fog);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.btn-ghost:hover {
+  color: var(--paper);
+  border-color: var(--dust);
+}
+
+.btn-rental {
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-rental:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 168, 83, 0.25);
+}
+
+.btn-table {
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-table:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(196, 75, 42, 0.25);
+}
+
+/* ─── Nav mobile overlay ─────────────────────────────── */
+.nav-overlay {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+.nav-overlay.open {
+  transform: translateY(0);
+}
+
+/* ─── Testimonial curly quotes ───────────────────────── */
+.quote-text::before {
+  content: '\201C';
+  color: var(--dust);
+  margin-right: 2px;
+}
+.quote-text::after {
+  content: '\201D';
+  color: var(--dust);
+  margin-left: 2px;
+}
