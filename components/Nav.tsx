@@ -1,16 +1,55 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { SITE } from '@/lib/constants'
+import { useTranslations, useLocale } from 'next-intl'
+import { useRouter, usePathname } from '@/i18n/navigation'
 
-const NAV_LINKS = [
-  { label: 'Modules', href: '#modules' },
-  { label: 'Roadmap', href: '#roadmap' },
-  { label: 'Contact', href: `mailto:${SITE.email}` },
-]
+type Locale = 'en' | 'hu'
+
+function LocaleSwitcher() {
+  const locale = useLocale() as Locale
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const switchLocale = (next: Locale) => {
+    router.replace(pathname, { locale: next })
+  }
+
+  return (
+    <div className="flex items-center gap-1">
+      {(['en', 'hu'] as Locale[]).map((loc) => (
+        <button
+          key={loc}
+          onClick={() => switchLocale(loc)}
+          className="font-mono uppercase transition-colors duration-200"
+          style={{
+            fontSize: '11px',
+            letterSpacing: '0.1em',
+            padding: '5px 10px',
+            borderRadius: '2px',
+            border: locale === loc ? 'none' : '1px solid var(--wire)',
+            backgroundColor: locale === loc ? 'var(--paper)' : 'transparent',
+            color: locale === loc ? 'var(--ink)' : 'var(--dust)',
+            cursor: 'pointer',
+          }}
+          aria-current={locale === loc ? 'true' : undefined}
+        >
+          {loc.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  )
+}
 
 export default function Nav() {
+  const t = useTranslations('nav')
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const NAV_LINKS = [
+    { label: t('modules'), href: '#modules' },
+    { label: t('roadmap'), href: '#roadmap' },
+    { label: t('contact'), href: '#contact-form' },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -18,7 +57,6 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  /* lock body scroll when mobile menu is open */
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -42,9 +80,9 @@ export default function Nav() {
           href="/"
           className="font-display text-paper select-none"
           style={{ fontSize: '17px', fontWeight: 500, letterSpacing: '-0.04em' }}
-          aria-label="Domrol — home"
+          aria-label="DomRol — home"
         >
-          Dom<span className="italic text-rental">rol</span>
+          Dom<span className="italic text-rental">Rol</span>
         </a>
 
         {/* Center links — desktop */}
@@ -63,6 +101,7 @@ export default function Nav() {
 
         {/* Right — desktop */}
         <div className="hidden md:flex items-center gap-4">
+          <LocaleSwitcher />
           <a
             href="https://rentalos.domrol.com"
             target="_blank"
@@ -73,11 +112,11 @@ export default function Nav() {
             rentalos.domrol.com →
           </a>
           <a
-            href="#modules"
+            href="#contact-form"
             className="font-body font-medium text-ink bg-paper hover:bg-paper-dim rounded-[3px] transition-colors duration-200"
             style={{ fontSize: '13px', padding: '7px 18px' }}
           >
-            Get started
+            {t('getStarted')}
           </a>
         </div>
 
@@ -92,7 +131,7 @@ export default function Nav() {
         </button>
       </nav>
 
-      {/* Mobile full-screen overlay */}
+      {/* Mobile overlay */}
       <div
         className={`nav-overlay fixed inset-0 z-40 bg-ink flex flex-col items-center justify-center gap-8 md:hidden${menuOpen ? ' open' : ''}`}
         aria-hidden={!menuOpen}
@@ -116,13 +155,14 @@ export default function Nav() {
         >
           rentalos.domrol.com →
         </a>
+        <LocaleSwitcher />
         <a
-          href="#modules"
+          href="#contact-form"
           onClick={() => setMenuOpen(false)}
           className="font-body font-medium text-ink bg-paper hover:bg-paper-dim rounded-[3px] transition-colors duration-200 mt-2"
           style={{ fontSize: '14px', padding: '11px 24px' }}
         >
-          Get started
+          {t('getStarted')}
         </a>
       </div>
     </>

@@ -1,4 +1,5 @@
-import { MODULES, COMING_MODULES } from '@/lib/constants'
+import { getTranslations } from 'next-intl/server'
+import { MODULES } from '@/lib/constants'
 
 /* ─── RentalOS admin mockup ───────────────────────────── */
 function RentalMockup() {
@@ -262,239 +263,84 @@ function TableMockup() {
 }
 
 /* ─── Main section ────────────────────────────────────── */
-export default function Modules() {
+export default async function Modules() {
+  const t = await getTranslations('modules')
+  const rentalPills = t.raw('rentalPills') as string[]
+  const tablePills = t.raw('tablePills') as string[]
   const rental = MODULES[0]
   const table = MODULES[1]
 
   return (
     <section id="modules" style={{ borderTop: '1px solid var(--wire)' }}>
       {/* Section header */}
-      <div
-        className="max-w-[1100px] mx-auto px-6"
-        style={{ paddingTop: '80px', paddingBottom: '48px' }}
-      >
+      <div className="max-w-[1100px] mx-auto px-6" style={{ paddingTop: '80px', paddingBottom: '48px' }}>
         <div className="flex items-center gap-3 mb-6">
-          <div
-            aria-hidden="true"
-            style={{ width: '20px', height: '1px', backgroundColor: 'var(--dust)', flexShrink: 0 }}
-          />
-          <span
-            className="font-mono text-dust uppercase"
-            style={{ fontSize: '10px', letterSpacing: '0.18em' }}
-          >
-            — A megoldás
+          <div aria-hidden="true" style={{ width: '20px', height: '1px', backgroundColor: 'var(--dust)', flexShrink: 0 }} />
+          <span className="font-mono text-dust uppercase" style={{ fontSize: '10px', letterSpacing: '0.18em' }}>
+            — {t('label')}
           </span>
         </div>
-        <h2
-          className="font-display text-paper"
-          style={{
-            fontSize: 'clamp(2rem, 3.5vw, 3rem)',
-            fontWeight: 400,
-            letterSpacing: '-0.04em',
-          }}
-        >
-          Egy platform. Minden iparágnak.
+        <h2 className="font-display text-paper" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 400, letterSpacing: '-0.04em' }}>
+          {t('title')}
         </h2>
       </div>
 
-      {/* ── RentalOS row ─────────────────────── */}
-      <div
-        className="grid grid-cols-1 md:grid-cols-2"
-        style={{ minHeight: '440px', borderBottom: '1px solid var(--wire)' }}
-      >
-        {/* Info col */}
-        <div
-          className="hover:bg-ink-2 transition-colors duration-300"
-          style={{ padding: '4rem 3rem', borderRight: '1px solid var(--wire)' }}
-        >
-          {/* Tag */}
+      {/* RentalOS row */}
+      <div className="grid grid-cols-1 md:grid-cols-2" style={{ minHeight: '440px', borderBottom: '1px solid var(--wire)' }}>
+        <div className="hover:bg-ink-2 transition-colors duration-300" style={{ padding: '4rem 3rem', borderRight: '1px solid var(--wire)' }}>
           <div className="flex items-center gap-2 mb-5">
-            <div
-              aria-hidden="true"
-              style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--rental)', flexShrink: 0 }}
-            />
-            <span
-              className="font-mono text-dust uppercase"
-              style={{ fontSize: '10px', letterSpacing: '0.16em' }}
-            >
-              {rental.name} · {rental.statusLabel}
-            </span>
+            <div aria-hidden="true" style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--rental)', flexShrink: 0 }} />
+            <span className="font-mono text-dust uppercase" style={{ fontSize: '10px', letterSpacing: '0.16em' }}>{t('rentalTag')}</span>
           </div>
-
-          <h2
-            className="font-display text-paper mb-5"
-            style={{
-              fontSize: 'clamp(2.2rem, 3.5vw, 3.5rem)',
-              fontWeight: 400,
-              letterSpacing: '-0.05em',
-              lineHeight: 1.0,
-            }}
-          >
-            {rental.title}
+          <h2 className="font-display text-paper mb-5" style={{ fontSize: 'clamp(2.2rem, 3.5vw, 3.5rem)', fontWeight: 400, letterSpacing: '-0.05em', lineHeight: 1.0 }}>
+            {t('rentalTitle')}
           </h2>
-
-          <p
-            className="font-body text-fog mb-6"
-            style={{ fontSize: '0.95rem', fontWeight: 300, lineHeight: 1.8, maxWidth: '380px' }}
-          >
-            {rental.description}
+          <p className="font-body text-fog mb-6" style={{ fontSize: '0.95rem', fontWeight: 300, lineHeight: 1.8, maxWidth: '380px' }}>
+            {t('rentalDesc')}
           </p>
-
-          {/* Pills */}
           <div className="flex flex-wrap mb-6" style={{ gap: '6px' }}>
-            {rental.pills.map((pill) => (
-              <span
-                key={pill}
-                className="font-mono text-dust"
-                style={{
-                  fontSize: '10px',
-                  letterSpacing: '0.06em',
-                  border: '1px solid var(--wire-2)',
-                  padding: '4px 10px',
-                  borderRadius: '2px',
-                }}
-              >
+            {rentalPills.map((pill) => (
+              <span key={pill} className="font-mono text-dust" style={{ fontSize: '10px', letterSpacing: '0.06em', border: '1px solid var(--wire-2)', padding: '4px 10px', borderRadius: '2px' }}>
                 {pill}
               </span>
             ))}
           </div>
-
-          <a
-            href={rental.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="module-link font-mono text-rental uppercase"
-            style={{ fontSize: '12px', letterSpacing: '0.1em' }}
-          >
+          <a href={rental.url} target="_blank" rel="noopener noreferrer" className="module-link font-mono text-rental uppercase" style={{ fontSize: '12px', letterSpacing: '0.1em' }}>
             {rental.url.replace('https://', '')} <span aria-hidden="true">→</span>
           </a>
         </div>
-
-        {/* Screen col */}
-        <div
-          className="bg-ink-2 flex items-center justify-center overflow-hidden"
-          style={{ padding: '3rem' }}
-        >
+        <div className="bg-ink-2 flex items-center justify-center overflow-hidden" style={{ padding: '3rem' }}>
           <RentalMockup />
         </div>
       </div>
 
-      {/* ── TableOS row (screen left, info right) ─ */}
-      <div
-        className="grid grid-cols-1 md:grid-cols-2"
-        style={{ minHeight: '440px', borderBottom: '1px solid var(--wire)' }}
-      >
-        {/* Screen col — order-2 on mobile, order-1 on desktop */}
-        <div
-          className="bg-ink-2 flex items-center justify-center overflow-hidden order-2 md:order-1"
-          style={{ padding: '3rem' }}
-        >
+      {/* TableOS row */}
+      <div className="grid grid-cols-1 md:grid-cols-2" style={{ minHeight: '440px', borderBottom: '1px solid var(--wire)' }}>
+        <div className="bg-ink-2 flex items-center justify-center overflow-hidden order-2 md:order-1" style={{ padding: '3rem' }}>
           <TableMockup />
         </div>
-
-        {/* Info col — order-1 on mobile, order-2 on desktop */}
-        <div
-          className="hover:bg-ink-2 transition-colors duration-300 order-1 md:order-2"
-          style={{ padding: '4rem 3rem', borderLeft: '1px solid var(--wire)' }}
-        >
-          {/* Tag */}
+        <div className="hover:bg-ink-2 transition-colors duration-300 order-1 md:order-2" style={{ padding: '4rem 3rem', borderLeft: '1px solid var(--wire)' }}>
           <div className="flex items-center gap-2 mb-5">
-            <div
-              aria-hidden="true"
-              style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--table)', flexShrink: 0 }}
-            />
-            <span
-              className="font-mono text-dust uppercase"
-              style={{ fontSize: '10px', letterSpacing: '0.16em' }}
-            >
-              {table.name} · {table.statusLabel}
-            </span>
+            <div aria-hidden="true" style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--table)', flexShrink: 0 }} />
+            <span className="font-mono text-dust uppercase" style={{ fontSize: '10px', letterSpacing: '0.16em' }}>{t('tableTag')}</span>
           </div>
-
-          <h2
-            className="font-display text-paper mb-5"
-            style={{
-              fontSize: 'clamp(2.2rem, 3.5vw, 3.5rem)',
-              fontWeight: 400,
-              letterSpacing: '-0.05em',
-              lineHeight: 1.0,
-            }}
-          >
-            {table.title}
+          <h2 className="font-display text-paper mb-5" style={{ fontSize: 'clamp(2.2rem, 3.5vw, 3.5rem)', fontWeight: 400, letterSpacing: '-0.05em', lineHeight: 1.0 }}>
+            {t('tableTitle')}
           </h2>
-
-          <p
-            className="font-body text-fog mb-6"
-            style={{ fontSize: '0.95rem', fontWeight: 300, lineHeight: 1.8, maxWidth: '380px' }}
-          >
-            {table.description}
+          <p className="font-body text-fog mb-6" style={{ fontSize: '0.95rem', fontWeight: 300, lineHeight: 1.8, maxWidth: '380px' }}>
+            {t('tableDesc')}
           </p>
-
-          {/* Pills */}
           <div className="flex flex-wrap mb-6" style={{ gap: '6px' }}>
-            {table.pills.map((pill) => (
-              <span
-                key={pill}
-                className="font-mono text-dust"
-                style={{
-                  fontSize: '10px',
-                  letterSpacing: '0.06em',
-                  border: '1px solid var(--wire-2)',
-                  padding: '4px 10px',
-                  borderRadius: '2px',
-                }}
-              >
+            {tablePills.map((pill) => (
+              <span key={pill} className="font-mono text-dust" style={{ fontSize: '10px', letterSpacing: '0.06em', border: '1px solid var(--wire-2)', padding: '4px 10px', borderRadius: '2px' }}>
                 {pill}
               </span>
             ))}
           </div>
-
-          <a
-            href={table.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="module-link font-mono text-table uppercase"
-            style={{ fontSize: '12px', letterSpacing: '0.1em' }}
-          >
+          <a href={table.url} target="_blank" rel="noopener noreferrer" className="module-link font-mono text-table uppercase" style={{ fontSize: '12px', letterSpacing: '0.1em' }}>
             {table.url.replace('https://', '')} <span aria-hidden="true">→</span>
           </a>
         </div>
-      </div>
-
-      {/* ── Coming soon ───────────────────────── */}
-      <div
-        className="grid grid-cols-1 sm:grid-cols-3 bg-ink"
-        style={{ borderBottom: '1px solid var(--wire)' }}
-      >
-        {COMING_MODULES.map((mod, i) => (
-          <div
-            key={mod.name}
-            className="hover:bg-ink-2 transition-colors duration-300"
-            style={{
-              padding: '2rem 1.5rem',
-              borderRight: i < COMING_MODULES.length - 1 ? '1px solid var(--wire)' : undefined,
-            }}
-          >
-            <div
-              className="font-mono uppercase mb-3"
-              style={{ fontSize: '9px', letterSpacing: '0.14em', color: 'var(--wire-2)' }}
-            >
-              {mod.name} · {mod.when}
-            </div>
-            <h3
-              className="font-display text-paper"
-              style={{ fontSize: '1.1rem', fontWeight: 500, letterSpacing: '-0.03em', marginBottom: '4px' }}
-            >
-              {mod.segment}
-            </h3>
-            <p
-              className="font-body text-fog"
-              style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.6 }}
-            >
-              {mod.desc}
-            </p>
-          </div>
-        ))}
       </div>
     </section>
   )

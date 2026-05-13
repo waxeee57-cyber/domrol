@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "modules": "Modulok",
+    "roadmap": "Ütemterv",
+    "contact": "Kapcsolat",
+    "getStarted": "Kezdés"
+  },
+  "stats": {
+    "s1value": "2", "s1label": "Élő termék",
+    "s2value": "0", "s2label": "Dupla foglalás az indulás óta",
+    "s3value": "48h", "s3label": "Átlagos bevezetési idő",
+    "s4value": "4 280", "s4label": "Migrált ügyfél"
+  },
+  "hero": {
+    "kicker": "DomRol Platform · 2026",
+    "h1Line1": "Minden vállalkozásnak",
+    "h1Line2": "jár egy",
+    "h1Line3": "rendszer.",
+    "subtitle": "A DomRol vertikális SaaS megoldásokat épít azoknak az iparágaknak, amelyek még mindig WhatsApp-on, Excelben és kézírással működnek. Egy architektúra. Minden iparág. Fehér cimkés az első naptól.",
+    "ctaPrimary": "Modulok felfedezése →",
+    "ctaSecondary": "Ütemterv megtekintése"
+  },
+  "problem": {
+    "label": "A probléma",
+    "title": "Millió vállalkozás ragadt.",
+    "body": "Nincs rendszer. Nincs automatizálás. Csak WhatsApp, Excel és reménykedés.",
+    "card1Stat": "A munkaidőn kívüli érdeklődések ~30%-a megválaszolatlan marad.",
+    "card1Title": "Elveszett foglalások",
+    "card1Body": "Rendszer nélkül senki nem veszi fel az éjszakai üzenetet. Reggelre az ügyfél máshol foglalt.",
+    "card2Stat": "Egyetlen dupla foglalás elég egy ügyfélkapcsolat elvesztéséhez.",
+    "card2Title": "Dupla foglalások",
+    "card2Body": "A manuális nyilvántartás minden komolyabb terhelésnél csődöt mond. Két visszaigazolás, egy időpont, nulla bizalom.",
+    "card3Stat": "A Wolt minden rendelés 25–30%-át elveszi.",
+    "card3Title": "Platform jutalék",
+    "card3Body": "100 rendelés × €12 átlag = €360/hó egy platformnak, amely az ügyfélkapcsolatodat is magának tartja."
+  },
+  "modules": {
+    "label": "A megoldás",
+    "title": "Egy platform. Minden iparágnak.",
+    "rentalTag": "RentalOS · Élő",
+    "rentalTitle": "Bérlési vállalkozásoknak",
+    "rentalDesc": "Autóbérlők, yacht charter, villa, motor, kerékpár, felszerelés — bármi, aminek neve és napi díja van. Minden foglalás automatikusan visszaigazolva, másodpercek alatt. 0 elveszett foglalás az indulás óta.",
+    "rentalPills": ["24/7 foglalás","Auto email","Flotta kezelés","Dokumentumok"],
+    "tableTag": "TableOS · Beta",
+    "tableTitle": "Éttermeknek",
+    "tableDesc": "Kiszállítás, elvitel, helyben fogyasztás — egyetlen adminból. Saját online rendelési oldal, konyhai kanban kijelző, 2 000+ ügyfél migrálható. Az első hónaptól megtérül a Wolt-jutalék megtakarításából.",
+    "tablePills": ["Online rendelés","Konyhai kanban","Ügyfél CRM","Realtime"]
+  },
+  "whyDomRol": {
+    "label": "Miért DomRol",
+    "title": "Az iparágodra építve. 48 óra alatt éles.",
+    "body": "Minden iparág ugyanazon a törött stacken fut: WhatsApp, Excel és szerencse. Mi mindhármat lecseréltük.",
+    "col1Label": "A régi módszer",
+    "col1Title": "3–6 hónap. €15 000+",
+    "col1Items": ["Minden alkalommal nulláról indul","Te örökölsz minden bugot","Állandó fejlesztői függőség","Nulla iparági tudás beépítve"],
+    "col2Label": "A csapda",
+    "col2Title": "Gyors kezdés. Örökké drága.",
+    "col2Items": ["Minden tranzakció 25–30%-a elvész","A te márkád, az ő platformjuk","Nincs admin, nincs adattulajdon","Senkire sem szabva igazán"],
+    "col3Label": "A helyes út",
+    "col3Title": "48 óra. Örökké a tiéd.",
+    "col3Items": ["Az iparágodra előre megépítve","Saját márka, domain és adatok","Nulla jutalék. Soha.","Mi telepítjük. Mi tartjuk karban."]
+  },
+  "testimonials": {
+    "label": "Referenciák",
+    "title": "Valódi vállalkozások. Valódi eredmények.",
+    "costaSolQuote": "Every inquiry gets a confirmation within seconds. Our customers think we're a much bigger operation than we are.",
+    "costaSolName": "CostaSol Car Rent",
+    "costaSolRole": "Marbella, Spanyolország · RentalOS",
+    "zoldfeszekQuote": "2 000 törzsvásárlónk volt, de nem volt rendszerünk elérni őket. Most minden rendelés automatikusan visszaigazolódik — a konyhánk egyet sem mulaszt el.",
+    "zoldfeszekName": "Zöldfészek Pizzéria",
+    "zoldfeszekRole": "Pázmánd, Magyarország · TableOS",
+    "zoldfeszekStat": "2 000+ ügyfél migrálva · 0 elveszett rendelés · 2026 óta"
+  },
+  "roadmap": {
+    "label": "Ütemterv",
+    "title": "Egy architektúra. Minden iparág.",
+    "body": "A RentalOS és a TableOS él. Még három vertikális érkezik 2026-ban.",
+    "items": [
+      {"index":"01","name":"RentalOS","segment":"Bérlési vállalkozások","status":"live","statusLabel":"Élő"},
+      {"index":"02","name":"TableOS","segment":"Éttermek","status":"beta","statusLabel":"Beta"},
+      {"index":"03","name":"StudioOS","segment":"Szépségszalonok","status":"q3","statusLabel":"Q3 2026"},
+      {"index":"04","name":"GarageOS","segment":"Autószerviztulajdonosok","status":"q4","statusLabel":"Q4 2026"},
+      {"index":"05","name":"MarinaOS","segment":"Vízi sportok","status":"q4","statusLabel":"Q4 2026"}
+    ]
+  },
+  "contact": {
+    "label": "Kezdés",
+    "title": "Készen állsz élőbe?",
+    "body": "Mondd el melyik iparágban vagy. Mi elvégzünk mindent és 48 órán belül élesen fut.",
+    "rentalBtn": "RentalOS — Bérlési vállalkozás",
+    "tableBtn": "TableOS — Étterem",
+    "emailBtn": "✉ info@domrol.com — Bármilyen kérdés"
+  },
+  "cta": {
+    "title1": "Melyik",
+    "title2": "iparágban vagy?",
+    "subtitle": "48 óra alatt éles. Kulcsrakész bevezetés. Nem kell IT csapat.",
+    "rentalBtn": "RentalOS — Bérlési vállalkozás →",
+    "tableBtn": "TableOS — Étterem →"
+  },
+  "footer": {
+    "tagline": "Minden vállalkozásnak jár egy rendszer. Magyar fejlesztés. Globális telepítés.",
+    "platformLabel": "Platform",
+    "companyLabel": "Cég",
+    "legalLabel": "Jogi",
+    "about": "Rólunk", "blog": "Blog", "careers": "Karrier", "contact": "Kapcsolat",
+    "privacy": "Adatvédelem", "terms": "ÁSZF", "security": "Biztonság",
+    "copyright": "© 2026 DomRol. Minden jog fenntartva.",
+    "geo": "HU · ES · EU"
+  }
+}

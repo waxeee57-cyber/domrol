@@ -1,6 +1,8 @@
-import { SITE } from '@/lib/constants'
+import { getTranslations } from 'next-intl/server'
 
-export default function Hero() {
+export default async function Hero() {
+  const t = await getTranslations('hero')
+
   return (
     <section
       className="hero-grain relative min-h-screen flex flex-col"
@@ -26,7 +28,7 @@ export default function Hero() {
             className="font-mono text-dust uppercase"
             style={{ fontSize: '11px', letterSpacing: '0.18em' }}
           >
-            Domrol Platform · 2026
+            {t('kicker')}
           </span>
         </div>
 
@@ -40,12 +42,11 @@ export default function Hero() {
             lineHeight: 0.95,
           }}
         >
-          <span className="block">Every business</span>
+          <span className="block">{t('h1Line1')}</span>
           <span className="block">
-            deserves{' '}
-            <span className="italic text-rental">an operating</span>
+            <span className="italic text-rental">{t('h1Line2')}</span>
           </span>
-          <span className="block text-dust">system.</span>
+          <span className="block text-dust">{t('h1Line3')}</span>
         </h1>
 
         {/* Bottom row */}
@@ -55,9 +56,7 @@ export default function Hero() {
             className="font-body text-fog"
             style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.75, maxWidth: '420px' }}
           >
-            {SITE.description}
-            <br />
-            One architecture. Every vertical. White-labeled from day one.
+            {t('subtitle')}
           </p>
 
           {/* CTAs */}
@@ -67,14 +66,14 @@ export default function Hero() {
               className="font-body font-medium text-ink bg-paper rounded-[3px] btn-primary"
               style={{ fontSize: '14px', padding: '11px 24px', display: 'inline-block' }}
             >
-              Explore modules →
+              {t('ctaPrimary')}
             </a>
             <a
               href="#roadmap"
               className="font-body rounded-[3px] btn-ghost"
               style={{ fontSize: '14px', padding: '11px 24px', display: 'inline-block' }}
             >
-              View roadmap
+              {t('ctaSecondary')}
             </a>
           </div>
         </div>

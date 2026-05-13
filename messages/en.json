@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "modules": "Modules",
+    "roadmap": "Roadmap",
+    "contact": "Contact",
+    "getStarted": "Get started"
+  },
+  "stats": {
+    "s1value": "2", "s1label": "Live products",
+    "s2value": "0", "s2label": "Double bookings since launch",
+    "s3value": "48h", "s3label": "Average go-live time",
+    "s4value": "4 280", "s4label": "Customers migrated"
+  },
+  "hero": {
+    "kicker": "DomRol Platform · 2026",
+    "h1Line1": "Every business",
+    "h1Line2": "deserves an operating",
+    "h1Line3": "system.",
+    "subtitle": "DomRol builds vertical SaaS for industries that still run on WhatsApp. One architecture. Every vertical. White-labeled from day one.",
+    "ctaPrimary": "Explore modules →",
+    "ctaSecondary": "View roadmap"
+  },
+  "problem": {
+    "label": "The problem",
+    "title": "A million businesses are stuck.",
+    "body": "No system. No automation. Just WhatsApp, spreadsheets, and missed revenue.",
+    "card1Stat": "~30% of inquiries outside business hours go unanswered.",
+    "card1Title": "Lost bookings",
+    "card1Body": "No system means no one captures the midnight message. By morning the customer has booked elsewhere.",
+    "card2Stat": "One duplicate booking can cost a client relationship.",
+    "card2Title": "Double bookings",
+    "card2Body": "Manual spreadsheets fail under any real load. Two confirmations, one slot, zero trust.",
+    "card3Stat": "Wolt takes 25–30% of every order.",
+    "card3Title": "Platform commission",
+    "card3Body": "100 orders × €12 average = €360/month paid to a platform that owns your customer relationship."
+  },
+  "modules": {
+    "label": "The solution",
+    "title": "One platform. Every industry.",
+    "rentalTag": "RentalOS · Live",
+    "rentalTitle": "For rental businesses",
+    "rentalDesc": "Car rentals, yacht charters, villas, motorcycles, bikes, equipment — anything with a name and a daily rate. Every booking automatically confirmed within seconds. 0 lost bookings since launch.",
+    "rentalPills": ["24/7 booking","Auto email","Fleet management","Documents"],
+    "tableTag": "TableOS · Beta",
+    "tableTitle": "For restaurants",
+    "tableDesc": "Delivery, takeaway, dine-in — from one admin panel. Your own online ordering page, kitchen kanban display, 2,000+ customers migratable. Pays for itself in month one from Wolt commission savings.",
+    "tablePills": ["Online ordering","Kitchen kanban","Customer CRM","Realtime"]
+  },
+  "whyDomRol": {
+    "label": "Why DomRol",
+    "title": "Built for your industry. Live in 48 hours.",
+    "body": "Every industry runs on the same broken stack: WhatsApp, Excel, and prayer. We replaced all three.",
+    "col1Label": "The old way",
+    "col1Title": "3–6 months. €15,000+",
+    "col1Items": ["Built from scratch every time","You inherit every bug","Permanent developer dependency","Zero industry knowledge built in"],
+    "col2Label": "The trap",
+    "col2Title": "Fast to start. Expensive forever.",
+    "col2Items": ["25–30% commission on every transaction","Your brand on their platform","No admin, no data ownership","Designed for no one in particular"],
+    "col3Label": "The right way",
+    "col3Title": "48 hours. Yours forever.",
+    "col3Items": ["Pre-built for your specific industry","Your brand, your domain, your data","Zero commission. Ever.","We deploy it. We maintain it."]
+  },
+  "testimonials": {
+    "label": "References",
+    "title": "Real businesses. Real results.",
+    "costaSolQuote": "Every inquiry gets a confirmation within seconds. Our customers think we're a much bigger operation than we are.",
+    "costaSolName": "CostaSol Car Rent",
+    "costaSolRole": "Marbella, Spain · RentalOS",
+    "zoldfeszekQuote": "We had 2,000 loyal customers but no system to reach them. Now every order is confirmed automatically — our kitchen never misses one.",
+    "zoldfeszekName": "Zöldfészek Pizzéria",
+    "zoldfeszekRole": "Pázmánd, Hungary · TableOS",
+    "zoldfeszekStat": "2,000+ customers migrated · 0 missed orders · Live since 2026"
+  },
+  "roadmap": {
+    "label": "Roadmap",
+    "title": "One architecture. Every vertical.",
+    "body": "RentalOS and TableOS are live. Three more verticals ship in 2026.",
+    "items": [
+      {"index":"01","name":"RentalOS","segment":"Rental businesses","status":"live","statusLabel":"Live"},
+      {"index":"02","name":"TableOS","segment":"Restaurants","status":"beta","statusLabel":"Beta"},
+      {"index":"03","name":"StudioOS","segment":"Beauty salons","status":"q3","statusLabel":"Q3 2026"},
+      {"index":"04","name":"GarageOS","segment":"Auto repair shops","status":"q4","statusLabel":"Q4 2026"},
+      {"index":"05","name":"MarinaOS","segment":"Water sports","status":"q4","statusLabel":"Q4 2026"}
+    ]
+  },
+  "contact": {
+    "label": "Get started",
+    "title": "Ready to go live?",
+    "body": "Tell us which industry you're in. We'll set everything up and have you live within 48 hours.",
+    "rentalBtn": "RentalOS — Rental business",
+    "tableBtn": "TableOS — Restaurant",
+    "emailBtn": "✉ info@domrol.com — Any question"
+  },
+  "cta": {
+    "title1": "Which",
+    "title2": "industry are you in?",
+    "subtitle": "Live in 48 hours. Turnkey setup. No IT team required.",
+    "rentalBtn": "RentalOS — Rental business →",
+    "tableBtn": "TableOS — Restaurant →"
+  },
+  "footer": {
+    "tagline": "Every business deserves an operating system. Built in Hungary. Deployed globally.",
+    "platformLabel": "Platform",
+    "companyLabel": "Company",
+    "legalLabel": "Legal",
+    "about": "About", "blog": "Blog", "careers": "Careers", "contact": "Contact",
+    "privacy": "Privacy", "terms": "Terms", "security": "Security",
+    "copyright": "© 2026 DomRol. All rights reserved.",
+    "geo": "HU · ES · EU"
+  }
+}

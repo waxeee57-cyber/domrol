@@ -1,24 +1,15 @@
+import { getTranslations } from 'next-intl/server'
 import ScrollReveal from '@/components/ScrollReveal'
 
-const CARDS = [
-  {
-    num: '01',
-    title: 'Elveszett foglalások',
-    body: 'Hétvégi érdeklődések érkeznek, nincs aki válaszol. Az ügyfél máshova megy — és nem jön vissza.',
-  },
-  {
-    num: '02',
-    title: 'Dupla foglalások',
-    body: 'Manuális Excel, telefonos egyeztetés. Néha ketten foglalják ugyanazt az időpontot.',
-  },
-  {
-    num: '03',
-    title: '25–30% jutalék',
-    body: 'Wolt, Foodpanda — minden rendelésen elveszi a negyedét. 100 rendelés × €12 átlag = €300/hó elveszett profit.',
-  },
-]
+export default async function Problem() {
+  const t = await getTranslations('problem')
 
-export default function Problem() {
+  const cards = [
+    { num: '01', stat: t('card1Stat'), title: t('card1Title'), body: t('card1Body') },
+    { num: '02', stat: t('card2Stat'), title: t('card2Title'), body: t('card2Body') },
+    { num: '03', stat: t('card3Stat'), title: t('card3Title'), body: t('card3Body') },
+  ]
+
   return (
     <section style={{ padding: '100px 0' }}>
       <div className="max-w-[1100px] mx-auto px-6">
@@ -32,11 +23,10 @@ export default function Problem() {
             className="font-mono text-dust uppercase"
             style={{ fontSize: '10px', letterSpacing: '0.18em' }}
           >
-            — A probléma
+            — {t('label')}
           </span>
         </div>
 
-        {/* Two-col header */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-end mb-16">
           <h2
             className="font-display text-paper"
@@ -47,24 +37,22 @@ export default function Problem() {
               lineHeight: 1.05,
             }}
           >
-            Millió vállalkozás él WhatsApp-on.
+            {t('title')}
           </h2>
           <p
             className="font-body text-fog"
             style={{ fontSize: '0.95rem', fontWeight: 300, lineHeight: 1.8 }}
           >
-            Nincs rendszer. Nincs valós idejű áttekintés. Nincsenek automatizált folyamatok.
-            Csak chat üzenetek — és elveszett foglalások éjszaka, hétvégén, ünnepnapokon.
+            {t('body')}
           </p>
         </div>
 
-        {/* Pain cards */}
         <ScrollReveal>
           <div
             className="grid grid-cols-1 md:grid-cols-3"
             style={{ gap: '1px', backgroundColor: 'var(--wire)' }}
           >
-            {CARDS.map((card) => (
+            {cards.map((card) => (
               <article
                 key={card.num}
                 className="bg-ink hover:bg-ink-3 transition-colors duration-300"
@@ -72,10 +60,16 @@ export default function Problem() {
               >
                 <div
                   className="font-mono text-wire-2"
-                  style={{ fontSize: '36px', lineHeight: 1, marginBottom: '1.25rem', letterSpacing: '-0.04em' }}
+                  style={{ fontSize: '36px', lineHeight: 1, marginBottom: '0.75rem', letterSpacing: '-0.04em' }}
                   aria-hidden="true"
                 >
                   {card.num}
+                </div>
+                <div
+                  className="font-mono text-rental"
+                  style={{ fontSize: '11px', marginBottom: '0.5rem', lineHeight: 1.4 }}
+                >
+                  {card.stat}
                 </div>
                 <h3
                   className="font-display text-paper"
