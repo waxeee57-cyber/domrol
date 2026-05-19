@@ -1,13 +1,11 @@
 import Nav from '@/components/Nav'
 import Hero from '@/components/sections/Hero'
-import Stats from '@/components/sections/Stats'
-import Problem from '@/components/sections/Problem'
-import Modules from '@/components/sections/Modules'
-import Testimonials from '@/components/sections/Testimonials'
-import WhyDomRol from '@/components/sections/WhyDomRol'
-import Roadmap from '@/components/sections/Roadmap'
-import Contact from '@/components/sections/Contact'
-import FinalCta from '@/components/sections/FinalCta'
+import Products from '@/components/sections/Products'
+import Services from '@/components/sections/Services'
+import Portfolio from '@/components/sections/Portfolio'
+import WhyUs from '@/components/sections/WhyUs'
+import Numbers from '@/components/sections/Numbers'
+import Waitlist from '@/components/sections/Waitlist'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -16,14 +14,12 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Stats />
-        <Problem />
-        <Modules />
-        <Testimonials />
-        <WhyDomRol />
-        <Roadmap />
-        <Contact />
-        <FinalCta />
+        <Products />
+        <Services />
+        <Portfolio />
+        <WhyUs />
+        <Numbers />
+        <Waitlist />
       </main>
       <Footer />
     </>
