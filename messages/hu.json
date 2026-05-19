@@ -4,6 +4,7 @@
     "services": "Szolgáltatások",
     "portfolio": "Portfólió",
     "whyUs": "Miért mi",
+    "about": "Rólunk",
     "numbers": "Számokban",
     "earlyAccess": "Korai hozzáférés"
   },
@@ -89,6 +90,17 @@
     "ownershipDesc": "A márkád, a domaind, az adataid. Nulla jutalék. Nulla vendor lock-in. Örökre a tiéd.",
     "maintainTitle": "Mindent mi kezelünk",
     "maintainDesc": "Telepítés, monitorozás, karbantartás, iteráció. Te a vállalkozásoddal foglalkozol. Mi az infrastruktúrával."
+  },
+  "about": {
+    "label": "Rólunk",
+    "title": "A DomRol mögött álló emberek",
+    "rolandName": "Roland",
+    "rolandRole": "Co-founder & CTO",
+    "rolandDesc": "Builder. Minden DomRol terméket én kódolok, tervezek és szállítok — az AI mint társ-pilóta.",
+    "dominikName": "Dominik",
+    "dominikRole": "Co-founder & CEO",
+    "dominikDesc": "Operator. Sales, növekedés és partnerségek — amit építünk, azt valódi üzletté alakítja.",
+    "footer": "Magyarországon építve 🇭🇺 — Európa-szerte szállítva."
   },
   "numbers": {
     "label": "Számokban",

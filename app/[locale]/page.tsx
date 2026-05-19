@@ -5,6 +5,7 @@ import Services from '@/components/sections/Services'
 import Portfolio from '@/components/sections/Portfolio'
 import WhyUs from '@/components/sections/WhyUs'
 import Numbers from '@/components/sections/Numbers'
+import About from '@/components/sections/About'
 import Waitlist from '@/components/sections/Waitlist'
 import Footer from '@/components/Footer'
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Portfolio />
         <WhyUs />
         <Numbers />
+        <About />
         <Waitlist />
       </main>
       <Footer />

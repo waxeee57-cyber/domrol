@@ -4,6 +4,7 @@
     "services": "Services",
     "portfolio": "Portfolio",
     "whyUs": "Why us",
+    "about": "About",
     "numbers": "Numbers",
     "earlyAccess": "Early access"
   },
@@ -89,6 +90,17 @@
     "ownershipDesc": "Your brand, your domain, your data. Zero commission. Zero vendor lock-in. Yours forever.",
     "maintainTitle": "We handle everything",
     "maintainDesc": "Deploy, monitor, maintain, iterate. You focus on your business. We handle the infrastructure."
+  },
+  "about": {
+    "label": "About",
+    "title": "The people behind DomRol",
+    "rolandName": "Roland",
+    "rolandRole": "Co-founder & CTO",
+    "rolandDesc": "Builder. Every DomRol product is coded, designed, and shipped by me — with AI as the co-pilot.",
+    "dominikName": "Dominik",
+    "dominikRole": "Co-founder & CEO",
+    "dominikDesc": "Operator. Sales, growth, and partnerships — turning what we build into real business.",
+    "footer": "Built in Hungary 🇭🇺 — shipping across Europe."
   },
   "numbers": {
     "label": "By the numbers",

@@ -51,6 +51,7 @@ export default function Nav() {
     { label: t('services'),  href: '#services' },
     { label: t('portfolio'), href: '#portfolio' },
     { label: t('whyUs'),     href: '#why' },
+    { label: t('about'),     href: '#about' },
     { label: t('numbers'),   href: '#numbers' },
   ]
 
